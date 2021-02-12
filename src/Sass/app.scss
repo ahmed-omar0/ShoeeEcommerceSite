@@ -1,0 +1,21 @@
+/****************************Fonts****************************/
+@font-face{
+    font-family: 'oswald';
+    src: '../fonts/oswald.ttf';
+}
+/****************************Global Variables****************************/
+$main-color: rgb(184, 184, 184);
+$main-font: oswald;
+
+@import "navbar";
+@import "./Home/slide.scss";
+@import "footer";
+
+
+html{
+    overflow-x: hidden;
+}
+body{
+    margin:0;
+    overflow-x: hidden;
+}

@@ -1,0 +1,49 @@
+.swiper-container{
+    margin: 0;
+    width: 100%;
+    height: 600px;
+    ul.swiper-wrapper{
+        padding-left: 0%;
+        margin: 0;
+        li{
+            padding: 20px;
+            width: 99.3vw !important;
+            height: 500px;
+            margin-right: 0  !important;
+            &:first-child{
+                margin-right: 0px !important;
+            }
+            h2{
+                font: normal small-caps 600 80px/ 60px $main-font;
+                padding: 50px 0 0 0;
+                color: $main-color;
+                margin-left: 100px;
+            }
+            button{
+                border: none;
+                outline: none;
+                background-color: $main-color;
+                font-family: $main-font;
+                font-size: 30px;
+                padding: 10px 30px;
+                border-radius: 10px;
+                margin-left: 100px;
+                transition: background .2s linear;
+                &:hover{
+                    background-color: white;
+                    cursor: pointer;
+                }
+            @media screen and (max-width: 767.99px) {
+                h2{
+                    font-size: 50px;
+                    padding: 20px 0 0 0;
+                }
+                button{
+                    font-size: 25;
+                    padding: 5px 15px;
+                }
+            }
+            }
+        }
+    }    
+}

@@ -1,0 +1,99 @@
+footer{
+    width: 100%;
+    padding: 30px 12px;
+    margin:10px 0 0;
+    background-color: rgb(34 ,34 ,34);
+    text-align: center;
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    ul{
+        list-style: none;
+        li{
+            margin-bottom: 5px;
+            a{
+                color: $main-color;
+                text-decoration: none;
+                font: normal normal 400 18px/ 30px $main-font;
+                transition: all .3s linear;
+                &:hover{
+                    color: rgb(216, 216, 216);
+                }
+            }
+        }
+        li:first-child{
+            font-size: 22px;
+            line-height: 1.6;
+            text-transform: uppercase;
+            font-family: $main-font;
+            font-weight: 600;
+        }
+    }
+    div.get-in-touch{
+        h2{
+            font-family: $main-font;
+            font-size: 22px;
+        }
+        p{
+            font-size: 15px;
+            color: $main-color;
+            padding-right: 7px;
+        }
+        .social-media-icons{
+            margin: auto 20px auto auto;
+            li{
+                display: inline-block;
+                width: 5%;
+                margin: 0 10px;
+                a{
+                    font-size: 22px;
+                    color: $main-color;
+                    &:hover{
+                        color: rgb(209, 209, 209);
+                    }
+                }
+            }
+        }
+    }
+    div.newsletter{
+        h2{
+            font-family: $main-font;
+            font-size: 22px;
+        }
+        input[type="email"]{
+            background-color: rgba(0 ,0 ,0 , 0);
+            width: 100%;
+            outline: none;
+            border: none;
+            border-bottom: 1px solid $main-color;
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: $main-color;
+        }
+        input[type="submit"]{
+            display: block;
+            background-color: rgb(113, 127, 224);
+            color: white;
+            min-width: 179px;
+            height: 46px;
+            font:normal normal 600 16px/ 30px $main-font;
+            outline: none;
+            border: none;
+            border-radius: 23px;
+            transition: all .2s linear;
+            &:hover{
+                background-color: rgba(25, 25, 199, 0.623);
+                cursor: pointer;
+            }
+        }
+    }
+    .footer{
+        width: 100%;
+        margin-top: 10px;
+        padding-right: 7px;
+        p{
+            color: $main-color;
+        }
+    }
+}

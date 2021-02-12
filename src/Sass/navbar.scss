@@ -1,0 +1,138 @@
+nav{
+    margin: 0;
+    padding:0%;
+    display: flex;
+    flex-flow:wrap;
+    border-bottom: 1px solid;
+    box-shadow: 0 .5px 2px 0 rgba(0, 0, 0, 0.329);
+    background-color: rgb(22, 22, 22);
+    font: normal small-caps 600 25px/ 25px "Times New Roman";
+    justify-content: space-evenly;
+    .logo{
+        padding: 15px 13px 13px;
+        a{
+            text-decoration: none;
+            color: $main-color;
+            font: normal small-caps 600 30px/ 25px "Times New Roman";
+            height: 100%;
+        }
+    }
+    .menu-icons{
+        display: none;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        margin: 0 0 21px;
+        span{
+            padding: 3px 20px;
+            height: 2px;
+            width: 20px;
+            margin: 0;
+            border-radius: 10px;
+            display: block;
+            background-color: rgba(114, 0, 0, 0.876);
+        }
+        span::before{
+            content: '';
+            padding: 3px 20px;
+            height: 2px;
+            border-radius: 10px;
+            background-color: rgba(114, 0, 0, 0.876);
+            display: block;
+            margin: 8px -20px;
+            width: 20px;
+        }
+        span::after{
+            content: '';
+            padding: 3px 20px;
+            height: 2px;
+            border-radius: 10px;
+            background-color: rgba(114, 0, 0, 0.876);
+            display: block;
+            margin: -4px -20px;
+            width: 20px;
+        }
+    }
+    ul.menu{
+        display: flex;
+        flex-flow: wrap;
+        list-style: none;
+        padding: 0;
+        margin:0;
+        transition: height .5s linear;
+        li{
+            padding:15px;
+            margin:0 2px;
+            transition:all .4s ease-in-out;
+            font-family:'Courier New', Courier, monospace;
+            text-transform: capitalize;
+            &:not(:last-of-type):hover{
+                background-color: $main-color;
+                cursor: pointer;
+                a{
+                    color:rgb(255, 255, 255);
+                }
+            }
+            a{
+                text-decoration: none;
+                color: $main-color;
+                transition:all .4s ease-in-out;
+            }
+            &:nth-child(4):hover{
+                position: relative;
+                ul{
+                    display: block;
+                }
+            }
+            form[name="search-form"]{
+                padding: 0 10px;
+                .sr-only{
+                    display: none;
+                }
+                input{
+                    font-size: 17px;
+                    outline:none;
+                    border: none;
+                    padding: 5px;
+                    border-radius: 10px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 991.99px){
+    nav{
+        width: 100%;
+        text-align: center;
+        .menu-icons{
+            display: block;
+            &.open{
+                span, span::after, span::before{
+                    transition: background .3s linear;
+                    background-color: transparent;
+                }
+                span::after{
+                    content: "X";
+                    font-size: 55px;
+                    font-weight: 900;
+                    margin: -54px -33px;
+                    color: rgba(114, 0, 0, 0.822);
+                }
+            }
+        }
+        ul.menu{
+            display: none;
+            width: 100%;
+            flex-direction: column;
+            text-align: center;
+            margin: 20px 0 35px;
+            height: 0;
+            overflow: hidden;
+        }
+        ul.menu.open{
+            display: block;
+            height: 100%;
+        }
+    }
+}
