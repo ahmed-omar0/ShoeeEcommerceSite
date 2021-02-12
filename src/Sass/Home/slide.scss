@@ -43,6 +43,18 @@
                     padding: 5px 15px;
                 }
             }
+            @media screen and (max-width: 576.99px) {
+                h2{
+                    font-size: 30px;
+                    padding: 20px 0 0 0;
+                    margin: 10px ;
+                }
+                button{
+                    font-size: 20;
+                    padding: 5px 15px;
+                    margin: 10px;
+                }
+            }
             }
         }
     }    
