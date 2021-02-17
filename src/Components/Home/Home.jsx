@@ -1,7 +1,13 @@
-import Slide from "./Slide"
+import React from 'react';
+import Slide from "./Slide";
+import Sections from "./Sections";
+
 const Home = () => {
     return (
-        <Slide/>
+        <React.Fragment>
+            <Slide/>
+            <Sections/>
+        </React.Fragment>
     );
 }
  

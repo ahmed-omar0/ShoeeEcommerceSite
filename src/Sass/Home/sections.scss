@@ -1,0 +1,44 @@
+section.sections{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    padding: 20px 40px;
+    margin: 10px 0;
+    @for $i from 1 through 3{
+        .section_#{$i}{
+            border: 1px solid red;
+            border-radius: 10px;
+            position: relative;
+            transition: background .3s ease-in-out;
+            &:hover{
+                background: blue;
+                a{
+                    opacity: 1;
+                    filter: opacity(100%);
+                }
+            }
+            img{
+                transition: background .3s ease-in-out;
+                filter: opacity(85%);
+                border-radius: 10px;
+                width: 300px;
+                height: 300px;
+            }
+            a{
+                text-align: center;
+                font: normal small-caps 600 38px/ 30px $main-font;
+                color: $main-color;
+                position: absolute;
+                top: 40%;
+                left: 35%;
+                opacity: 0;
+                filter: opacity(0);
+                transition: opacity .3s ease-in-out;
+                text-decoration: none;
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

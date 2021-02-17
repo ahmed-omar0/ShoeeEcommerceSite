@@ -33,15 +33,6 @@
                     background-color: white;
                     cursor: pointer;
                 }
-            @media screen and (max-width: 767.99px) {
-                h2{
-                    font-size: 50px;
-                    padding: 20px 0 0 0;
-                }
-                button{
-                    font-size: 25;
-                    padding: 5px 15px;
-                }
             }
             @media screen and (max-width: 576.99px) {
                 h2{
@@ -55,6 +46,15 @@
                     margin: 10px;
                 }
             }
+            @media screen and (max-width: 767.99px) {
+                h2{
+                    font-size: 50px;
+                    padding: 20px 0 0 0;
+                }
+                button{
+                    font-size: 25;
+                    padding: 5px 15px;
+                }
             }
         }
     }    
