@@ -1,4 +1,4 @@
-section.men-section{
+section.single-section{
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
@@ -26,6 +26,9 @@ section.men-section{
         img{
             width: 344px;
             height: 350px;        
+        }
+        h2{
+            font-size: 40px;
         }
         h3{
             font: normal small-caps 600 20px/ 30px $main-font;

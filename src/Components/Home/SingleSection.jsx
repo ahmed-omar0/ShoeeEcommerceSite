@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { BsStarFill, BsStarHalf, BsStar } from 'react-icons/bs';
 import axios from 'axios';
 
-const MenSection = () => {
+const SingleSection = (props) => {
     const sections = []
     const [items, setItems] = useState([])
     useEffect(() => {
@@ -15,7 +15,7 @@ const MenSection = () => {
         })
     },[]);
     for (let i = 0; i < items.length; i++) {
-        if (items[i].title === 'shirt' && sections.length < 3){
+        if (items[i].title === props.type && sections.length < 3){
             sections.push(
                 <div className={"item_" + items[i].id} key={"item_" + items[i].id}>
                     <a href="e">
@@ -48,15 +48,15 @@ const MenSection = () => {
         }
     }
     return (
-        <section className="men-section">
-            <h2>Men Section</h2>
+        <section className="single-section">
+            <h2>{props.sectionName}</h2>
                 {sections}
-            <a href="#3" className="load_more">more ---&raquo;</a>
+            <a href={props.loadMore} className="load_more">more ---&raquo;</a>
         </section>
     );
 }
  
-export default MenSection;
+export default SingleSection;
 /*
 {
 "id":"2",

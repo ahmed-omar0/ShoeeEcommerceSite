@@ -15,7 +15,7 @@ const Slide = () => {
     const imgs = [slide1, slide2, slide3]
     //Slides
     const slides = []
-    const headers = ['men section', 'watches section', 'shoes section']
+    const headers = ['men section', 'HeadPhones section', 'shoes section']
     for (let i = 0; i< imgs.length ;i++){
         slides.push(
             <SwiperSlide 
@@ -25,6 +25,7 @@ const Slide = () => {
                     listStyle:"none",
                     backgroundImage: `url(${imgs[i]})`,
                     backgroundSize: 'cover',
+                    backgroundPosition: "center center",
                     width: '97%',
                     height: '100%'
                     }}>
