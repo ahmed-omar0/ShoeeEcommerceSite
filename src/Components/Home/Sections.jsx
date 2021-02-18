@@ -9,7 +9,7 @@ const Sections = () => {
     const sections = [];
     for (let i = 0; i < images.length; i++) {
         sections.push(
-            <div className={"section_" + (i+1)}>
+            <div className={"section_" + (i+1)} key={"section_" + (i+1)}>
                 <img src={images[i]} alt={types[i] + 'section'}/>
                 <a href="#3">{types[i]}</a>
             </div>

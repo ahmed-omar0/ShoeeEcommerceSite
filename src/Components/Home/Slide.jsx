@@ -55,8 +55,6 @@ const Slide = () => {
         </React.Fragment>
     );
 }
-// The API
-// https://600c30e638fd25001702cf7e.mockapi.io/api/v1/products
 
 
 export default Slide;

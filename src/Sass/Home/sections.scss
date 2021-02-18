@@ -6,6 +6,7 @@ section.sections{
     margin: 10px 0;
     @for $i from 1 through 3{
         .section_#{$i}{
+            margin-bottom: 5px;
             border: 1px solid red;
             border-radius: 10px;
             position: relative;
@@ -27,7 +28,7 @@ section.sections{
             a{
                 text-align: center;
                 font: normal small-caps 600 38px/ 30px $main-font;
-                color: $main-color;
+                color: rgb(164, 240, 193);
                 position: absolute;
                 top: 40%;
                 left: 35%;

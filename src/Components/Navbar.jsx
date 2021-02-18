@@ -1,4 +1,5 @@
 import {useRef} from 'react';
+
 const Navbar = () => {
     const menuRef = useRef(null);
     const btnRef = useRef(null);

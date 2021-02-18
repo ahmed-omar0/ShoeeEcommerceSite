@@ -4,12 +4,13 @@
     src: '../fonts/oswald.ttf';
 }
 /****************************Global Variables****************************/
-$main-color: rgb(184, 184, 184);
+$main-color: rgba(116, 116, 197, 0.794);
 $main-font: oswald;
 
 @import "navbar";
 @import "./Home/slide.scss";
 @import "./Home/sections.scss";
+@import "./Home/men_section.scss";
 @import "footer";
 
 
