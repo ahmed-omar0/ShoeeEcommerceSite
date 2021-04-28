@@ -1,10 +1,11 @@
 footer{
     width: 100%;
     padding: 30px 12px;
-    margin:10px 0 0;
-    background-color: rgb(34 ,34 ,34);
+    margin:40px 0 0;
+    background-color: rgba(255, 255, 255, 0.823);
     text-align: center;
-    color: white;
+    color: $main-color;
+    border-top: 1px solid;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
@@ -18,7 +19,7 @@ footer{
                 font: normal normal 400 18px/ 30px $main-font;
                 transition: all .3s linear;
                 &:hover{
-                    color: rgb(216, 216, 216);
+                    color: rgb(51, 14, 14);
                 }
             }
         }
@@ -50,7 +51,7 @@ footer{
                     font-size: 22px;
                     color: $main-color;
                     &:hover{
-                        color: rgb(209, 209, 209);
+                        color: rgb(51, 14, 14);
                     }
                 }
             }

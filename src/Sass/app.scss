@@ -4,14 +4,17 @@
     src: '../fonts/oswald.ttf';
 }
 /****************************Global Variables****************************/
-$main-color: rgba(116, 116, 197, 0.794);
+$main-color: rgba(109, 28, 28, 0.794);
 $main-font: oswald;
-
-@import "navbar";
+@import "./spinner.scss";
+@import "./navbar.scss";
 @import "./Home/slide.scss";
 @import "./Home/sections.scss";
 @import "./Home/single_section.scss";
-@import "footer";
+@import "./products/products.scss";
+@import "./singleProduct/single-product.scss";
+@import "./singleProduct/related-products.scss";
+@import "./footer.scss";
 
 
 html{

@@ -6,40 +6,53 @@ section.sections{
     margin: 10px 0;
     @for $i from 1 through 3{
         .section_#{$i}{
-            margin-bottom: 5px;
+            cursor: pointer;
+            margin-bottom: 25px;
             border: 1px solid red;
             border-radius: 10px;
+            height: 300px;
+            width: 300px;
+            background-image: url('../../assets/images/section#{$i}.jpg');
+            background-size:cover ;
+            background-position: center center;
+            transition: all .3s ease-in-out;
             position: relative;
-            transition: background .3s ease-in-out;
-            &:hover{
-                background: blue;
-                a{
-                    opacity: 1;
-                    filter: opacity(100%);
-                }
-            }
-            img{
-                transition: background .3s ease-in-out;
-                filter: opacity(85%);
+            .overlay{
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 border-radius: 10px;
-                width: 300px;
-                height: 300px;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                transition: all .3s ease-in-out;
             }
             a{
                 text-align: center;
                 font: normal small-caps 600 38px/ 30px $main-font;
                 color: rgb(164, 240, 193);
-                position: absolute;
-                top: 40%;
-                left: 35%;
                 opacity: 0;
                 filter: opacity(0);
-                transition: opacity .3s ease-in-out;
+                transition: all .3s ease-in-out;
                 text-decoration: none;
                 &:hover{
                     text-decoration: underline;
                 }
             }
+            &:hover{
+                box-shadow: 0 0 10px 0 $main-color;
+                transform: scale(1.1,1.1);
+                .overlay{
+                    background-color: rgba(0, 0, 0, 0.452);
+                }
+                a{
+                    opacity: 1;
+                    filter: opacity(100%);
+                }
+            }
+            
         }
     }
 }

@@ -1,19 +1,21 @@
 nav{
     margin: 0;
-    padding:0%;
+    padding:10px 0;
     display: flex;
     flex-flow:wrap;
     border-bottom: 1px solid;
-    box-shadow: 0 .5px 2px 0 rgba(0, 0, 0, 0.329);
-    background-color: rgb(22, 22, 22);
-    font: normal small-caps 600 25px/ 25px "Times New Roman";
-    justify-content: space-evenly;
+    box-shadow: 0 .5px 2px 0 rgba(0, 0, 0, 0.185);
+    background-color: rgb(255, 255, 255);
+    justify-content: space-between;
+    align-items: center;
+    z-index: 42;
     .logo{
         padding: 15px 13px 13px;
+        margin-left: 50px;
         a{
             text-decoration: none;
             color: $main-color;
-            font: normal small-caps 600 30px/ 25px "Times New Roman";
+            font: normal small-caps 600 35px/ 25px $main-font;
             height: 100%;
         }
     }
@@ -53,60 +55,85 @@ nav{
             width: 20px;
         }
     }
-    ul.menu{
+    .menu-collapse{
         display: flex;
-        flex-flow: wrap;
-        list-style: none;
-        padding: 0;
-        margin:0;
-        transition: height .5s linear;
-        li{
-            padding:15px;
-            margin:0 2px;
-            transition:all .4s ease-in-out;
-            font-family:'Courier New', Courier, monospace;
-            text-transform: capitalize;
-            &:not(:last-of-type):hover{
-                background-color: $main-color;
-                cursor: pointer;
+        justify-content: space-around;
+        align-items: center;
+        width: 74%;
+        ul.menu{
+            display: flex;
+            flex-flow: wrap;
+            list-style: none;
+            padding: 0;
+            margin:0;
+            transition: height .5s linear;
+            li{
+                margin: 8px 2px 12px; 
+                transition: all .1s ease-in-out;
+                font-family: oswald;
+                font-weight: 400;
+                font-size: 26px;
+                text-transform: uppercase;
+                a:hover{
+                    border-bottom: 3px solid $main-color;
+                    cursor: pointer;
+                    color: rgb(148, 3, 3);
+                    font-size: 28px;
+                }
                 a{
-                    color:rgb(255, 255, 255);
+                    padding:8px 15px;
+                    text-decoration: none;
+                    color: $main-color;
+                    transition:all .4s ease-in-out;
                 }
-            }
-            a{
-                text-decoration: none;
-                color: $main-color;
-                transition:all .4s ease-in-out;
-            }
-            &:nth-child(4):hover{
-                position: relative;
-                ul{
-                    display: block;
-                }
-            }
-            form[name="search-form"]{
-                padding: 0 10px;
-                .sr-only{
-                    display: none;
-                }
-                input{
-                    font-size: 17px;
-                    outline:none;
-                    border: none;
-                    padding: 5px;
-                    border-radius: 10px;
+                a.active{
+                    border-bottom: 3px solid $main-color;
+                    color: rgb(148, 3, 3);
+                    font-size: 28px;
                 }
             }
         }
+        form[name="search-form"]{
+            padding: 0 10px;
+            width: 30%;
+            margin: 0 0  0 20px;
+            .sr-only{
+                display: none;
+            }
+            input{
+                font-size: 25px;
+                outline:none;
+                border: none;
+                border-bottom: 1px solid;
+                width: 70%;
+                margin-left: 10px;
+            }
+        }
     }
-}
-
-@media only screen and (max-width: 991.99px){
-    nav{
+    div.icons{
+        color: $main-color;
+        font-size: 30px;
+        padding: 10px 0 0;
+        svg{
+            margin: 0 10px;
+            cursor: pointer;
+            transition:all .4s ease-in-out;
+        }
+        svg:hover{
+            cursor: pointer;
+            color:rgb(70, 52, 52);
+        }
+    }
+    // Start Media
+    @media only screen and (max-width: 1199.99px){
         width: 100%;
         text-align: center;
+        justify-content: space-around;
+        position: relative;
+        overflow: visible;
         .menu-icons{
             display: block;
+            cursor: pointer;
             &.open{
                 span, span::after, span::before{
                     transition: background .3s linear;
@@ -118,21 +145,58 @@ nav{
                     font-weight: 900;
                     margin: -51px -33px;
                     color: rgba(114, 0, 0, 0.822);
+                    cursor: pointer;
                 }
             }
         }
-        ul.menu{
-            display: none;
-            width: 100%;
+        .menu-collapse{
             flex-direction: column;
-            text-align: center;
-            margin: 20px 0 35px;
+            width: 0;
             height: 0;
-            overflow: hidden;
+            transition: width ease-in-out .8s;
+            position: absolute;
+            top: 57px;
+            left: 0;
+            ul.menu{
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                text-align: center;
+                margin: 20px 0 0 35px;
+                li{
+                    margin-top: 30px;
+                }
+            }
+            form{
+                width: 0;
+                overflow: hidden;
+            }
         }
-        ul.menu.open{
+        .menu-collapse.open{
+            width: 100%;
+            height: auto;
             display: block;
-            height: 100%;
+            position: absolute;
+            top: 80px;
+            left: 0;
+            background: rgb(255 ,255 ,255);
+            z-index: 10;
+            ul.menu{
+                display: block;
+                margin: 20px auto;
+            }
+            form{
+                width: 60%;
+                padding-bottom: 10px;
+                margin: auto;
+            }
+        }
+    }
+    @media only screen and (max-width: 400px){
+        padding: 5px;
+        .logo{
+            padding: 0;
+            margin-left: 0;
         }
     }
 }

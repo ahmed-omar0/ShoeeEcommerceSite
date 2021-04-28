@@ -1,4 +1,7 @@
 import {useRef} from 'react';
+import {Link} from 'react-router-dom';
+import {FaUserCircle ,FaShoppingCart} from 'react-icons/fa';
+import {BiHelpCircle} from 'react-icons/bi';
 
 const Navbar = () => {
     const menuRef = useRef(null);
@@ -10,34 +13,36 @@ const Navbar = () => {
     return ( 
         <nav>
             <div className="logo">
-                <a href="e">AL.F.N.C</a>
+                <Link to="/">Shoeee</Link>
+            </div>
+            <div ref={menuRef} className="menu-collapse">
+                <ul className="menu">
+                    <li>
+                        <Link to="/">Home</Link>
+                    </li>
+                    <li>
+                        <Link to="/products">Products</Link>
+                    </li>
+                    <li>
+                        <Link to="/aboutus">About-Us</Link>
+                    </li>
+                    <li>
+                        <Link to="/contactus">Contact-us</Link>
+                    </li>
+                </ul>
+                <form name="search-form"> 
+                    <label className="sr-only">Search</label>
+                    <input type="search" id="search" placeholder="search"/>
+                </form>
+            </div>
+            <div className="icons">
+                    <FaUserCircle/>
+                    <FaShoppingCart/>
+                    <BiHelpCircle/>
             </div>
             <button className="menu-icons" aria-label="close" onClick={menuTragger} ref={btnRef}>
                 <span aria-hidden="true"></span>
             </button>
-            <ul className="menu" ref={menuRef}>
-                <li>
-                    <a href="#e">Home</a>
-                </li>
-                <li>
-                    <a href="#e">About-Us</a>
-                </li>
-                <li>
-                    <a href="#e">Products</a>
-                </li>
-                <li>
-                    <a href="#e">our-services</a>
-                </li>
-                <li>
-                    <a href="#e">Contact-us</a>
-                </li>
-                <li>
-                    <form name="search-form"> 
-                        <label className="sr-only">Search</label>
-                        <input type="search" id="search" placeholder="search"/>
-                    </form>
-                </li>
-            </ul>
         </nav>
     );
 }

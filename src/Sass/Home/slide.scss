@@ -16,10 +16,15 @@
             h2{
                 font: normal small-caps 600 80px/ 60px $main-font;
                 padding: 50px 0 0 0;
-                color: $main-color;
+                color: rgb(123 ,117 ,127);
                 margin-left: 100px;
             }
             button{
+                a{
+                    text-decoration: none;
+                    color:rgb(123 ,117 ,127);
+                    transition: .4s;
+                }
                 border: none;
                 outline: none;
                 background-color: $main-color;
@@ -32,6 +37,23 @@
                 &:hover{
                     background-color: white;
                     cursor: pointer;
+                    a{
+                        color: $main-color;
+                    }
+                }
+            }
+            @media only screen and (max-width: 400px){
+                ul.swiper-wrapper{
+                    li{
+                        padding: 30px;
+                        h2{
+                            font-size: 40px;
+                        }
+                        button{
+                            font-size: 25px;
+                            padding: 7px 20px;
+                        }
+                    }
                 }
             }
             @media screen and (max-width: 576.99px) {

@@ -1,9 +1,10 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y , Autoplay} from 'swiper';
-import slide1 from '../../assets/slide1.jpg';
-import slide2 from '../../assets/slide2.jpg';
-import slide3 from '../../assets/slide3.jpg';
+import SwiperCore, { Navigation, Pagination, Scrollbar, A11y , Autoplay } from 'swiper';
+import slide1 from '../../assets/images/slide1.jpg';
+import slide2 from '../../assets/images/slide2.jpg';
+import slide3 from '../../assets/images/slide3.jpg';
 
 // Import Swiper styles
 import 'swiper/swiper-bundle.min.css';
@@ -21,6 +22,7 @@ const Slide = () => {
             <SwiperSlide 
                 key={"slide-" + i} 
                 tag="li"
+                className='swiper-zoom-target'
                 style={{
                     listStyle:"none",
                     backgroundImage: `url(${imgs[i]})`,
@@ -29,8 +31,17 @@ const Slide = () => {
                     width: '97%',
                     height: '100%'
                     }}>
-                        <h2>{headers[i]}</h2>
-                        <button>Shop Now</button>
+                        {({isActive}) => (
+                            isActive ? 
+                            <div>
+                                <h2>{headers[i]}</h2>
+                                <button>
+                                    <Link to="/products"> Shop Now </Link>
+                                </button>
+                            </div>
+                            :
+                            ''
+                        )}
             </SwiperSlide>
         )
     }
@@ -41,14 +52,18 @@ const Slide = () => {
                 tag="section" 
                 wrapperTag="ul"  
                 spaceBetween={50}
+                initialSlide={1}
+                autoplay={{delay: 3000}}
                 navigation
                 pagination={{ clickable: true }}
                 scrollbar={{clickable:true}}
-                autoplay={{delay:6000}}
                 a11y={{
                     prevSlideMessage: 'Previous slide',
                     nextSlideMessage: 'Next slide',
                     enabled: true
+                }}
+                keyboard={ {
+                    enabled: true,
                 }}
                 >
                 {slides}
