@@ -3,15 +3,14 @@ nav{
     padding:10px 0;
     display: flex;
     flex-flow:wrap;
-    border-bottom: 1px solid;
-    box-shadow: 0 .5px 2px 0 rgba(0, 0, 0, 0.185);
+    box-shadow: 0 .5px 2px 0 rgba(172, 116, 116, 0.185);
     background-color: rgb(255, 255, 255);
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     z-index: 42;
     .logo{
-        padding: 15px 13px 13px;
-        margin-left: 50px;
+        padding: 0 20px;
+        margin: 0 50px;
         a{
             text-decoration: none;
             color: $main-color;
@@ -57,9 +56,9 @@ nav{
     }
     .menu-collapse{
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
-        width: 74%;
+        width: 50%;
         ul.menu{
             display: flex;
             flex-flow: wrap;
@@ -72,13 +71,12 @@ nav{
                 transition: all .1s ease-in-out;
                 font-family: oswald;
                 font-weight: 400;
-                font-size: 26px;
+                font-size: 20px;
                 text-transform: uppercase;
                 a:hover{
-                    border-bottom: 3px solid $main-color;
                     cursor: pointer;
                     color: rgb(148, 3, 3);
-                    font-size: 28px;
+                    font-size: 21px;
                 }
                 a{
                     padding:8px 15px;
@@ -89,31 +87,18 @@ nav{
                 a.active{
                     border-bottom: 3px solid $main-color;
                     color: rgb(148, 3, 3);
-                    font-size: 28px;
+                    font-size: 21px;
                 }
-            }
-        }
-        form[name="search-form"]{
-            padding: 0 10px;
-            width: 30%;
-            margin: 0 0  0 20px;
-            .sr-only{
-                display: none;
-            }
-            input{
-                font-size: 25px;
-                outline:none;
-                border: none;
-                border-bottom: 1px solid;
-                width: 70%;
-                margin-left: 10px;
             }
         }
     }
     div.icons{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
         color: $main-color;
-        font-size: 30px;
-        padding: 10px 0 0;
+        font-size: 25px;
         svg{
             margin: 0 10px;
             cursor: pointer;
@@ -122,6 +107,150 @@ nav{
         svg:hover{
             cursor: pointer;
             color:rgb(70, 52, 52);
+        }
+        div.cart-icon{
+            position: relative;
+            cursor: pointer;
+            span{
+                position: absolute;
+                top: -1px;
+                right: 1px;
+                border-radius: 50%;
+                background-color: blanchedalmond;
+                padding: 1px 6px;
+                font-size: 16px;
+            }
+        }
+    }
+    form[name="search-form"]{
+        transition: .5s;
+        position: absolute;
+        top: 70px;
+        right: 323px;
+        height: 0;
+        background-color: rgb(255 ,255 ,255);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+        overflow: hidden;
+        .sr-only{
+            display: none;
+        }
+        input{
+            width: 100%;
+            height: 100%;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            background-color: $main-color;
+            font-size: 22px;
+            text-indent: 5px;
+            color: rgba(231, 227, 227, 0.87);
+        }
+        datalist{
+            font-size: 25px;
+            outline:none;
+            border: none;
+        }
+    }
+    form[name="search-form"].open{
+        height: 60px;
+        z-index: 100;
+        overflow: visible;
+    }
+    form[name="search-form"]::before{
+        content: '';
+        display: block;
+        border: 0px solid $main-color;
+        transition: .5s;
+        position: absolute;
+        top: -24px;
+        right: 20px;
+    }
+    form[name="search-form"].open::before{
+        border: 10px solid $main-color;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-left-color: transparent;
+    }
+    .cart{
+        position: absolute;
+        top: 72px;
+        right: 0;
+        width: 0px;
+        border-bottom-left-radius: 10px;
+        background-color: white;
+        box-shadow: 0 0 2px 0 red;
+        z-index: 100000;
+        display: flex;
+        flex-flow: column wrap;
+        transition: .5s;
+        .no-products{
+            height: auto;
+            text-align: center;
+            svg{
+                font-size: 35px;
+            }
+        }
+        & > div {
+            border-bottom: 1px solid;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+            margin: 10px 0;
+            &>div{
+                width: 100px;
+                margin: 0 10px 0 0;
+                position: relative;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 10px;
+                }
+                .items-number{
+                    position: absolute;
+                    top: -6px;
+                    right: -9px;
+                    border-radius: 50%;
+                    padding: 5px 10px;
+                    background: $main-color;
+                    color: white;
+                }
+            }
+            h2{
+                color: $main-color;
+                font-size: 20px;
+            }
+            .trash-icon{
+                width: 20%;
+                cursor: pointer;
+            }
+            h3{
+                width: 50%;
+                text-align: center;
+            }
+        }
+        a{
+            width: 50%;
+            margin: 20px auto;
+            text-decoration: none;
+            padding: 10px 15px;
+            background-color: $main-color;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            border-radius: 10px;
+            font-size: 20px;
+            transition: .5s;
+            &:hover{
+                background-color: whitesmoke;
+                color: black;
+            }
+        }
+        &.open{
+            width: 320px;
         }
     }
     // Start Media
@@ -185,18 +314,39 @@ nav{
                 display: block;
                 margin: 20px auto;
             }
-            form{
-                width: 60%;
-                padding-bottom: 10px;
-                margin: auto;
-            }
+        }
+        form[name="search-form"]{
+            right: 50%;
+        }
+        form[name="search-form"]::before{
+            right: 29px;
         }
     }
     @media only screen and (max-width: 400px){
-        padding: 5px;
+        justify-content: space-around;
         .logo{
             padding: 0;
-            margin-left: 0;
+            margin: 0;
+            font-size: 30px;
+        }
+        form[name="search-form"]::before{
+            right: 60px;
+        }
+        form[name="search-form"]{
+            top: 58px;
+        }
+        .menu-icons{
+            span{
+                width: 10px;
+                height: 1px;
+                &::after, &::before{
+                    height: 1px;
+                    width: 10px;
+                }
+            }
+        }
+        div.icons{
+            font-size: 22px;
         }
     }
 }

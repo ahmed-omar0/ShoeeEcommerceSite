@@ -9,7 +9,7 @@ const Sections = () => {
             <Link to="/products" key={"section_" + (i+1)}>
                 <div className={"section_" + (i+1)}>
                     <div className="overlay">
-                        <Link to="/products">{types[i]}</Link>
+                        <h2>{types[i]}</h2>
                     </div>
                 </div>
             </Link>

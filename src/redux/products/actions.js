@@ -1,14 +1,14 @@
-import {ADD_ITEM, REMOVE_ITEM, FETCH_PRODUCT, FETCH_DATA_REQUEST, FETCH_DATA_SUCCESS, FETCH_DATA_FAILURE} from './actionTypes';
+import {INCREASE_NUM_OF_ITEMS, DECREASE_NUM_OF_ITEMS, FETCH_PRODUCT, FETCH_DATA_REQUEST, FETCH_DATA_SUCCESS, FETCH_DATA_FAILURE, ADD_ITEM_TO_CART, REMOVE_FROM_CART} from './actionTypes';
 
-export const addItem = numOfItems => {
+export const increaseNumOfItems = numOfItems => {
     return{
-        type: ADD_ITEM,
+        type: INCREASE_NUM_OF_ITEMS,
         payload: numOfItems + 1
     }
 }
-export const removeItem = numOfItems => {
+export const decreaseNumOfItems = numOfItems => {
     return{
-        type: REMOVE_ITEM,
+        type: DECREASE_NUM_OF_ITEMS,
         payload: numOfItems - 1
     }
 }
@@ -35,3 +35,17 @@ export const fetchDataFailure = error => {
         payload: error
     }
 }
+export const addItemToCart = (productId) => {
+    return {
+        type: ADD_ITEM_TO_CART,
+        payload: productId
+    }
+}
+export const removeFromCart = (itemID) => {
+    return {
+        type: REMOVE_FROM_CART,
+        payload: {
+            id: itemID,
+        },
+    };
+};

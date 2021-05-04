@@ -73,4 +73,15 @@ section.single_product{
             width: 50%;
         }
     }
+    @media (max-width: 400px){
+        width: 90%;
+        section.swiper-container{
+            height: 60%;
+            ul{
+                li{
+                    height: 250px;
+                }
+            }
+        }
+    }
 }

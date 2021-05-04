@@ -1,11 +1,12 @@
-import {FETCH_DATA_REQUEST, FETCH_DATA_SUCCESS, FETCH_DATA_FAILURE, FETCH_PRODUCT, ADD_ITEM, REMOVE_ITEM} from './actionTypes';
+import {FETCH_DATA_REQUEST, FETCH_DATA_SUCCESS, FETCH_DATA_FAILURE, INCREASE_NUM_OF_ITEMS,  DECREASE_NUM_OF_ITEMS, FETCH_PRODUCT,  ADD_ITEM_TO_CART, REMOVE_FROM_CART} from './actionTypes';
 
 export const initState = {
     loading: true,
     products: [],
     error: '',
-    numOfItems: 0,
-    id: 1
+    numOfItems: 1,
+    id: 1,
+    cart: []
 }
 
 export const productsReducer = (state = initState, action) => {
@@ -32,15 +33,34 @@ export const productsReducer = (state = initState, action) => {
                 ...state,
                 id: action.payload
             }
-        case ADD_ITEM:
-            return {
+        case INCREASE_NUM_OF_ITEMS:
+            return{
                 ...state,
                 numOfItems: action.payload
             }
-        case REMOVE_ITEM:
-            return {
+        case DECREASE_NUM_OF_ITEMS:
+            return{
                 ...state,
                 numOfItems: action.payload
+            }
+        case ADD_ITEM_TO_CART:
+            // Greate Item data from products array
+            const item = state.products.find(
+                (product) => product.id === action.payload
+            );
+            // Check if Item is in cart already
+            const inCart = state.cart.find((item) => item.id === action.payload ? true : false)
+            return {
+                ...state,
+                cart: inCart ? state.cart.map((item) =>
+                            item.id === action.payload ? { ...item, qty: item.qty + state.numOfItems} : item
+                    )
+                    : [...state.cart, { ...item, qty: state.numOfItems }],
+            }
+        case REMOVE_FROM_CART:
+            return {
+                ...state,
+                cart: state.cart.filter((item) => item.id !== action.payload.id),
             }
         default: return state
     }

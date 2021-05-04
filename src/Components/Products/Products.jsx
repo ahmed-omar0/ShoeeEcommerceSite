@@ -82,7 +82,7 @@ const Products = () => {
     let swithcSection = (e) => {
         // remove active class from siblings
         for ( let i =0; i < menuRef.current.length; i++){
-            console.log(menuRef.current[i].className = '')
+            menuRef.current[i].className = ''
         };
         // remove other Sections
         for ( let i = 0 ; i < items.length; i++){

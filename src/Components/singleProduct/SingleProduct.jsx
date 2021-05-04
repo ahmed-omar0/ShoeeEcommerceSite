@@ -6,12 +6,12 @@ import SwiperCore, {Pagination } from 'swiper';
 import { BsStarFill, BsStarHalf, BsStar } from 'react-icons/bs';
 // Redux
 import {useSelector, useDispatch} from 'react-redux';
-import {addItem, removeItem} from '../../redux/products/actions';
+import {increaseNumOfItems, addItemToCart, decreaseNumOfItems} from '../../redux/products/actions';
 
 import RelatedProducts from './relatedProducts';
 
-
 SwiperCore.use([Pagination]);
+
 
 const SingleProduct = (props) => {
     const section = [];
@@ -61,14 +61,21 @@ const SingleProduct = (props) => {
                         </div>
                         <div className="items_count">
                             <button 
-                                onClick={() => (numOfItems > 0 ? dispatch(removeItem(numOfItems)) : false)}
+                                onClick={() => (numOfItems > 1 ? dispatch(decreaseNumOfItems(numOfItems)) : false)}
                                 >
                             -</button>
-                            <span>{numOfItems + 1}</span>
-                            <button onClick={() => (numOfItems >= 0 ? dispatch(addItem(numOfItems)) : false)}>+</button>
-                            <span>{`${products[i].price * (numOfItems + 1)} $`}</span>
+                            <span>{numOfItems}</span>
+                            <button onClick={() => (numOfItems >= 0 ? dispatch(increaseNumOfItems(numOfItems)) : false)}>+</button>
+                            <span>{`${products[i].price * (numOfItems)} $`}</span>
                         </div>
-                        <button className='add-items'>Add Items</button>
+                        <button className='add-items'
+                            onClick={
+                                () => {
+                                    dispatch(addItemToCart(products[i].id))
+                                    
+                                }
+                            }
+                        >Add Items</button>
                     </div>
                 </React.Fragment>
             )
@@ -86,3 +93,10 @@ const SingleProduct = (props) => {
 }
 
 export default SingleProduct;
+
+
+/*
+    ** onclick get product[i] & Get NumOfItems
+    ** 
+    ** Put them on cartItems
+*/
