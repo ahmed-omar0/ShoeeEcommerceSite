@@ -32,7 +32,7 @@ const SingleProduct = (props) => {
             }
             section.push(
                 <React.Fragment key={i}>
-                    <Swiper tag="section" wrapperTag="ul" loop={true} autoplay={{delay: 3000,}} 
+                    <Swiper tag="section" wrapperTag="ul" loop={true} autoplay={{delay: 3000,}} className="single-product-slider" 
                         spaceBetween={50}
                         pagination={{clickable: true}}>
                         {images}

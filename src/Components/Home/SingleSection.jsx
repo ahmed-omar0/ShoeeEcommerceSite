@@ -10,18 +10,20 @@ const SingleSection = (props) => {
     const dispatch = useDispatch()
     if(props.products.length !== 0){
         for (let i = 0; i < props.products.length; i++) {
-            if (props.products[i].title === props.type && sections.length < 3){
+            if (props.products[i].title === props.type && sections.length < 4){
                 sections.push(
-                    <div className={"item_" + props.products[i].id} key={"item_" + props.products[i].id}>
-                        <Link to='/singleProduct'>
-                            <img src={props.products[i].image} alt={props.products[i].name} loading="lazy"
-                                id={props.products[i].id}
-                                onClick={e => {
-                                        dispatch(fetchProduct(e.target.id))
-                                        window.scrollTo(0,0)
-                                    }
-                                    }/>
-                        </Link>
+                    <div className="item" key={"item_" + props.products[i].id}>
+                        <div className='image-container'>
+                            <Link to='/singleProduct'>
+                                <img src={props.products[i].image} alt={props.products[i].name} loading="lazy"
+                                    id={props.products[i].id}
+                                    onClick={e => {
+                                            dispatch(fetchProduct(e.target.id))
+                                            window.scrollTo(0,0)
+                                        }
+                                        }/>
+                            </Link>
+                        </div>
                         <Link to='/singleProduct'>
                             <h2 
                                 id={props.products[i].id}

@@ -1,0 +1,78 @@
+section.top-selling{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    h2.title{
+        text-align: center;
+        cursor: pointer;
+        font: normal small-caps 600 45px/40px oswald;
+        color: $main-color;
+    }
+    .image-container{
+        width: 160px;
+        height: 170px;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    section.top-selling-slider{
+        width: 70%;
+        margin: auto;
+        ul{
+            list-style-type: none;
+            li{
+                width: 250px !important;
+                margin: 0 50px;
+                a{
+                    text-decoration: none;
+                    color: $main-color;
+                }
+                .item{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    .content{
+                        h2{
+                            text-align: center;
+                            font: normal small-caps 600 30px/40px oswald;
+                            text-decoration: none;
+                        }
+                        h3{
+                            font: normal small-caps 600 20px/ 30px $main-font;
+                        }
+                        span.old_price{
+                            text-decoration: line-through;
+                            color: rgb(160, 160, 160);
+                            font-size: 15px;
+                            margin-left: 2px;
+                        }
+                        div.stars{
+                            display: inline-block;
+                            margin-left: 140px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 767.99px) {
+        section.top-selling-slider.small-screen{
+            width: 90%;
+            margin: auto;
+            height: 400px;
+            ul{
+                li{
+                    width: 300px !important;
+                    margin: 0 0 0 20px;
+                    &:first-of-type{
+                        margin: 0 0 0 -24px;
+                    }
+                }
+            }
+        }
+    }
+}

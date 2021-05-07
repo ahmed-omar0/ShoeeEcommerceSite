@@ -1,4 +1,5 @@
 nav{
+    position: relative;
     margin: 0;
     padding:10px 0;
     display: flex;
@@ -96,7 +97,6 @@ nav{
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        align-items: center;
         color: $main-color;
         font-size: 25px;
         svg{
@@ -176,7 +176,7 @@ nav{
     }
     .cart{
         position: absolute;
-        top: 72px;
+        top: 102%;
         right: 0;
         width: 0px;
         border-bottom-left-radius: 10px;
@@ -306,7 +306,7 @@ nav{
             height: auto;
             display: block;
             position: absolute;
-            top: 80px;
+            top: 55px;
             left: 0;
             background: rgb(255 ,255 ,255);
             z-index: 10;
@@ -317,12 +317,14 @@ nav{
         }
         form[name="search-form"]{
             right: 50%;
+            top: 58px;
+            transform: translateX(15%);
         }
         form[name="search-form"]::before{
             right: 29px;
         }
     }
-    @media only screen and (max-width: 400px){
+    @media only screen and (max-width: 576px){
         justify-content: space-around;
         .logo{
             padding: 0;
@@ -334,6 +336,7 @@ nav{
         }
         form[name="search-form"]{
             top: 58px;
+            transform: translateX(5%);
         }
         .menu-icons{
             span{

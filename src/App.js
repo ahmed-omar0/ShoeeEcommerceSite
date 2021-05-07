@@ -10,9 +10,8 @@ import Navbar from "./Components/Navbar";
 import Home from "./Components/Home/Home";
 import Products from "./Components/Products/Products"
 import SingleProduct from "./Components/singleProduct/SingleProduct";
-import AboutUs from "./Components/AboutUs/AboutUs";
-import ContactUs from "./Components/ContactUs/ContactUs";
 import CheckOut from "./Components/CheckOut";
+import ContactUs from "./Components/ContactUs/ContactUs";
 import Footer from "./Components/Footer";
 // Redux Persist
 import {persistor} from "./redux/store";
@@ -29,9 +28,8 @@ function App() {
             <Route exact path="/" component={Home}/>
             <Route path="/products" component={Products}/>
             <Route path="/singleProduct" component={SingleProduct}/>
-            <Route path="/aboutus" component={AboutUs}/>
-            <Route path="/contactus" component={ContactUs}/>
             <Route path="/checkout" component={CheckOut}/>
+            <Route path="/contactus" component={ContactUs}/>
           </PersistGate>
         <Footer/>
         </BrowserRouter>

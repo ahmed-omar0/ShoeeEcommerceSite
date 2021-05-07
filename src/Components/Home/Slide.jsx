@@ -33,7 +33,7 @@ const Slide = () => {
                     }}>
                         {({isActive}) => (
                             isActive ? 
-                            <div>
+                            <div className="content">
                                 <h2>{headers[i]}</h2>
                                 <button>
                                     <Link to="/products"> Shop Now </Link>
@@ -50,7 +50,8 @@ const Slide = () => {
             <Swiper 
                 id="main" 
                 tag="section" 
-                wrapperTag="ul"  
+                wrapperTag="ul"
+                className="main-slider"
                 spaceBetween={50}
                 initialSlide={1}
                 autoplay={{delay: 3000}}

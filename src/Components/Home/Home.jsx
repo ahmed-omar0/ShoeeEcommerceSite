@@ -1,13 +1,13 @@
 import React from 'react';
 import Slide from "./Slide";
-import Sections from "./Sections";
+import TopSelling from "./TopSelling";
 import SingleSection from "./SingleSection";
 
 const Home = () => {
     return (
         <React.Fragment>
             <Slide/>
-            <Sections/>
+            <TopSelling/>
             {/*Add Men Section*/}
             <SingleSection type="shirt" sectionName="Men Section" loadMore="/products"/>
             {/*Add HeadPhones Section*/}

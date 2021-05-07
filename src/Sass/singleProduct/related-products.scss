@@ -97,4 +97,12 @@
             padding-bottom: 2px;
         }
     }
+    @media screen and (max-width: 576px) {
+        .product-details{
+            width: 288px;
+        }
+        div.stars{
+            margin-left: 110px !important;
+        }
+    }
 }

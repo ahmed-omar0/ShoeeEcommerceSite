@@ -77,7 +77,7 @@ const Navbar = () => {
                         </Link>
                     </li>
                     <li>
-                        <Link to="/aboutus" onClick={() => (
+                        <Link to="/checkout" onClick={() => (
                             menuRef.current.className.includes('open') ?
                             menuTragger() :
                             cartRef.current.className.includes('open') ?
@@ -86,7 +86,7 @@ const Navbar = () => {
                                 switchSearchBox() :
                             console.log(false)
                             )}>
-                                About-Us
+                                Check Out
                         </Link>
                     </li>
                     <li>

@@ -1,4 +1,5 @@
 /****************************Fonts****************************/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap');
 @font-face{
     font-family: 'oswald';
     src: '../fonts/oswald.ttf';
@@ -6,10 +7,11 @@
 /****************************Global Variables****************************/
 $main-color: rgba(109, 28, 28, 0.794);
 $main-font: oswald;
+$second-font: 'Noto Serif', serif;
 @import "./spinner.scss";
 @import "./navbar.scss";
 @import "./Home/slide.scss";
-@import "./Home/sections.scss";
+@import "./Home/top_selling.scss";
 @import "./Home/single_section.scss";
 @import "./products/products.scss";
 @import "./singleProduct/single-product.scss";
