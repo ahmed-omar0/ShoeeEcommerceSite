@@ -1,0 +1,183 @@
+div.alert{
+    width: 70%;
+    margin: 20px auto;
+    text-align: center;
+    font-family: $second-font;
+    text-transform: capitalize;
+    color: $main-color;
+    background: rgb(250 ,248 ,248);
+    padding: 20px;
+    border-radius: 5px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    svg{
+        font-size: 45px;
+    }
+    a{
+        text-decoration: none;
+        margin: 10px auto;
+        border: none;
+        outline: none;
+        font-size: 18px;
+        padding: 5px 30px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-family: $second-font;
+        background: $main-color;
+        color: white;
+    }
+}
+section.check-out{
+    margin: 30px 0 30px 17%;
+    padding: 20px;
+    width: 50%;
+    border: 1px solid;
+    border-radius: 5px;
+    div.item{
+        width: 100%;
+        margin-bottom: 5px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        &>div{
+            width: 110px;
+            height: 120px;
+            position: relative;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+            .items-number{
+                position: absolute;
+                top: 0px;
+                right: 3px;
+                border-radius: 50%;
+                padding: 7px 10px;
+                background: $main-color;
+                color: white;
+            }
+        }
+        h2{
+            color: $main-color;
+            width: 70%;
+            margin-left: 10px;
+        }
+        h3{
+            width: 23%;
+        }
+        .trash-icon{
+            cursor: pointer;
+            margin-left: 10px;
+        }
+    }
+    h4{
+        color: $main-color;
+        text-align: center;
+        font-size: 25px;
+    }
+    .checkout-method{
+        position: absolute;
+        top: 15%;
+        right: 10%;
+        width: 500px;
+        background: rgb(232 ,218 ,218);
+        padding: 20px;
+        border-radius: 5px;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        form{
+            display: flex;
+            flex-direction: column;
+            input{
+                margin: 10px 0;
+                border: none;
+                outline: none;
+                font-size: 18px;
+                padding: 5px 10px;
+                border-radius: 5px;
+                &[type="submit"]{
+                    padding: 10px;
+                    cursor: pointer;
+                    font-family: $second-font;
+                    font-size: 20px;
+                    background: $main-color;
+                    color: white;
+                    transition: .2s;
+                    &:hover{
+                        color: $main-color;
+                        background: rgb(250 ,248 ,248);
+                    }
+                }
+            }
+        }
+        span{
+            visibility: hidden;
+        }
+    }
+    button{
+        display: none;
+        visibility: hidden;
+        margin: 10px auto;
+        width: 100%;
+        border: none;
+        outline: none;
+        font-size: 18px;
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-family: $second-font;
+        font-size: 20px;
+        background: $main-color;
+        color: white;
+        transition: .2s;
+        &:hover{
+            color: $main-color;
+            background: rgb(250 ,248 ,248);
+        }
+    }
+    @media screen and  (max-width: 1199.99px) {
+        width: 85%;
+        margin: 40px auto;
+        div.item{
+            h3{
+                width: auto;
+            }
+        }
+        .checkout-method{
+            visibility: hidden;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: auto;
+            height: auto;
+            transition: .5s;
+            span{
+                position: absolute;
+                top: 10%;
+                right: 29px;
+                font-size: 30px;
+                font-weight: 600;
+                font-family: 'Noto Serif';
+                cursor: pointer;
+                outline: none;
+                transition: .5s;
+            }
+        }
+        .checkout-method.open{
+            visibility: visible;
+            span{
+                visibility: visible;
+            }
+        }
+        button{
+            display: block;
+            visibility: visible;
+        }
+    }
+}

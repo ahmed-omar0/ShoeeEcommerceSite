@@ -1,4 +1,5 @@
 section.single_product{
+    position: relative;
     width: 70%;
     border: 1px solid;
     border-radius: 20px;
@@ -23,6 +24,22 @@ section.single_product{
                 }
             }
         }
+    }
+    .top-selling{
+        z-index: 20;
+        position: absolute;
+        top: 26px;
+        left: -56px;
+        width: 175px;
+        font-size: 19px;
+        font-family: 'Noto Serif';
+        color: rgb(139 ,75 ,75);
+        text-align: center;
+        background: rgb(244 ,230 ,230);
+        padding: 10px;
+        border-radius: 10px;
+        transform: rotateZ(-52deg);
+        font-weight: 600;
     }
     div.product_details{
         text-align: left;

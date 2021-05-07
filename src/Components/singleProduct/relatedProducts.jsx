@@ -43,9 +43,8 @@ const RelatedProducts = () => {
                                     onClick={e => {
                                             dispatch(fetchProduct(e.target.id))
                                             window.scrollTo(0,0)
-                                        }
-                                    }
-                                >
+                                        }}
+                                    >
                                     {products[i].name}
                                 </Link>
                             </h2>

@@ -25,7 +25,7 @@ const SingleProduct = (props) => {
         if (productId === products[i].id ){
             for (let x= 0;x <3;x++){
                 images.push(
-                    <SwiperSlide tag="li" key={products[i].id * Math.random()} style={{listStyle:'none'}}>
+                    <SwiperSlide tag="li" key={products[i].id * Math.random()} style={{listStyle:'none',}}>
                         <img src={products[i].gallarey[x].url} alt="" loading="lazy" width="520"/>
                     </SwiperSlide>
                 )
@@ -33,10 +33,15 @@ const SingleProduct = (props) => {
             section.push(
                 <React.Fragment key={i}>
                     <Swiper tag="section" wrapperTag="ul" loop={true} autoplay={{delay: 3000,}} className="single-product-slider" 
-                        spaceBetween={50}
+                        spaceBetween={10}
                         pagination={{clickable: true}}>
                         {images}
                     </Swiper>
+                    {
+                        products[i].best ?
+                            <span className='top-selling'>Best Selling</span>  :
+                            console.log(false)
+                    }
                     <div className="product_details">
                         <h1>{products[i].name}</h1>
                         <h2>Brand: {products[i].brand}</h2>

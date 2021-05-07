@@ -53,13 +53,12 @@ const TopSelling = () => {
         <section className="top-selling">
             <h2 className="title">Top Selling</h2>
             {
-                window.innerWidth <= '767.99px' ? 
+                window.innerWidth <= '767.99' ? 
                     <Swiper 
                     tag='section' 
                     className="top-selling-slider small-screen" 
                     wrapperTag="ul"
                     slidesPerView={1}
-                    spaceBetween={50}
                     pagination
                     navigation
                     >

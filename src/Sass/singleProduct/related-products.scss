@@ -97,9 +97,11 @@
             padding-bottom: 2px;
         }
     }
-    @media screen and (max-width: 576px) {
-        .product-details{
-            width: 288px;
+    @media screen and (max-width: 767.99px) {
+        .product-container{
+            .product-details{
+                width: 288px !important;
+            }
         }
         div.stars{
             margin-left: 110px !important;

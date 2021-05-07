@@ -131,9 +131,6 @@ const Navbar = () => {
                         }) : console.log(false)
                 }
                 {
-                    console.log(cart)
-                }
-                {
                     cart.length === 0 ?
                         <div className="no-products">
                             <BsExclamationCircleFill/>

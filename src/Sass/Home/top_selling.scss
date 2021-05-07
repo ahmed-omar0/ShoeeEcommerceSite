@@ -24,8 +24,6 @@ section.top-selling{
         ul{
             list-style-type: none;
             li{
-                width: 250px !important;
-                margin: 0 50px;
                 a{
                     text-decoration: none;
                     color: $main-color;
@@ -66,8 +64,7 @@ section.top-selling{
             height: 400px;
             ul{
                 li{
-                    width: 300px !important;
-                    margin: 0 0 0 20px;
+                    margin: 0 28px  0 -24px;
                     &:first-of-type{
                         margin: 0 0 0 -24px;
                     }
