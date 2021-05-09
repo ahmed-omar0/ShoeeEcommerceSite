@@ -7,9 +7,7 @@
         margin: 0;
         li{
             padding: 20px;
-            width: 99.3vw !important;
             height: 500px;
-            margin-right: 0  !important;
             &::after{
                 content: '';
                 display: block;
@@ -17,7 +15,7 @@
                 width: 200px;
                 position: absolute;
                 top: -50px;
-                bottom: 0;
+                bottom: -60px;
                 left: 10%;
                 box-shadow: 0 0 4px 0 #541414;
                 transform: rotatez(18deg);

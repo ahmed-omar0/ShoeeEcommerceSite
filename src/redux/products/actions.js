@@ -1,4 +1,6 @@
-import {INCREASE_NUM_OF_ITEMS, DECREASE_NUM_OF_ITEMS, FETCH_PRODUCT, FETCH_DATA_REQUEST, FETCH_DATA_SUCCESS, FETCH_DATA_FAILURE, ADD_ITEM_TO_CART, REMOVE_FROM_CART} from './actionTypes';
+import {INCREASE_NUM_OF_ITEMS, DECREASE_NUM_OF_ITEMS, FETCH_PRODUCT, FETCH_DATA_REQUEST, 
+        FETCH_DATA_SUCCESS, FETCH_DATA_FAILURE, ADD_ITEM_TO_CART, REMOVE_FROM_CART,
+        CHANGE_SECTION_CLASS} from './actionTypes';
 
 export const increaseNumOfItems = numOfItems => {
     return{
@@ -49,3 +51,9 @@ export const removeFromCart = (itemID) => {
         },
     };
 };
+export const changeSectionClass = (sectionClass) => {
+    return {
+        type: CHANGE_SECTION_CLASS,
+        payload: sectionClass,
+    }
+}

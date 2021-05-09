@@ -1,4 +1,4 @@
-import {useRef} from 'react';
+import {useEffect, useRef} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import { fetchProduct } from '../../redux/products/actions';
 import {Link} from 'react-router-dom';
@@ -6,8 +6,10 @@ import { BsStarFill, BsStarHalf, BsStar } from 'react-icons/bs';
 
 const Products = () => {
     const products = useSelector(state => state.products);
+    const sectionClass = useSelector(state => state.sectionClass);
     const dispatch = useDispatch();
     const items = [];
+    const list = [];
     let itemsRef = useRef([]);
     itemsRef.current = [];
     let menuRef = useRef([]);
@@ -22,13 +24,22 @@ const Products = () => {
             menuRef.current.push(el)
         }
     }
+    useEffect(() => {
+        for(let i=0; i < items.length; i++){
+            console.log(items)
+            let className = itemsRef.current[i].className;
+            className.includes(sectionClass) ? itemsRef.current[i].classList.add('active') : itemsRef.current[i].classList.remove('active')
+        }
+    }, [items, sectionClass])
+    
     // loop items
     for (let i =0; i<products.length; i++){
         if (products[i].id === '9') {
             console.log(true);
         }else{
             items.push(
-                <div key={products[i].id} className={products[i].title} ref={addToItemsRef} id={products[i].id}>
+                <div key={products[i].id} className={products[i].title === 'shirt' ? 'all men' : `all ${products[i].title}`} 
+                    ref={addToItemsRef} id={products[i].id}>
                     <div className="product-image">
                         <Link to='/singleProduct'>
                             <img src={products[i].image} alt=""
@@ -78,59 +89,145 @@ const Products = () => {
             )
         }
     };
+
     // Switch Section Function
-    let swithcSection = (e) => {
+    let swithcSectionClass = (e) => {
         // remove active class from siblings
         for ( let i =0; i < menuRef.current.length; i++){
-            menuRef.current[i].className = ''
+            menuRef.current[i].classList.remove('active')
         };
         // remove other Sections
         for ( let i = 0 ; i < items.length; i++){
             let dataType = e.target.getAttribute('data-type');
-            let sectionClass = itemsRef.current[i].className;
-
-            if(dataType === sectionClass){
-                itemsRef.current[i].style.cssText = 'display: flex;';
+            let itemsClass = itemsRef.current[i].className;
+            if(itemsClass.includes(dataType)){
+                itemsRef.current[i].classList.add('active')
             }else if (dataType === 'all'){
-                itemsRef.current[i].style.cssText = 'display: flex;';
+                itemsRef.current[i].classList.add('active')
             }else{
-                itemsRef.current[i].style.cssText = 'opacity: 0;';
-                setTimeout(() => {
-                    itemsRef.current[i].style.display = 'none';
-                }, 300)
+                itemsRef.current[i].classList.remove('active')
             }
         }
         return e.target.classList.add('active');
     }
-    return (
-        <section className="products">
-                <ul>
-                    <li data-type="all" className="active"
-                        onClick={swithcSection}
+    list.push(
+        sectionClass === 'men' ?
+            <>
+                <li data-type="all"
+                        onClick={swithcSectionClass}
                         ref={addToMenuRef}
                     >
                         All
                     </li>
-                    <li data-type="shirt"
-                        onClick={swithcSection}
+                    <li data-type="men"  className="active"
+                        onClick={swithcSectionClass}
                         ref={addToMenuRef}
                     >
                         Shirts
                     </li>
                     <li data-type="headphones"
-                        onClick={swithcSection}
+                        onClick={swithcSectionClass}
                         ref={addToMenuRef}
                     >
                         Headphones
                     </li>
                     <li data-type="shoes"
-                        onClick={swithcSection}
+                        onClick={swithcSectionClass}
                         ref={addToMenuRef}
                     >
                         Shoes
                     </li>
-                </ul>
-            <div>
+            </>
+            :
+        sectionClass === 'headphones' ?
+            <>
+                <li data-type="all"
+                        onClick={swithcSectionClass}
+                        ref={addToMenuRef}
+                    >
+                        All
+                    </li>
+                    <li data-type="men"
+                        onClick={swithcSectionClass}
+                        ref={addToMenuRef}
+                    >
+                        Shirts
+                    </li>
+                    <li data-type="headphones"  className="active"
+                        onClick={swithcSectionClass}
+                        ref={addToMenuRef}
+                    >
+                        Headphones
+                    </li>
+                    <li data-type="shoes"
+                        onClick={swithcSectionClass}
+                        ref={addToMenuRef}
+                    >
+                        Shoes
+                    </li>
+            </>
+            :
+        sectionClass === 'shoes' ? 
+            <>
+                <li data-type="all"
+                    onClick={swithcSectionClass}
+                    ref={addToMenuRef}
+                >
+                    All
+                </li>
+                <li data-type="men"
+                    onClick={swithcSectionClass}
+                    ref={addToMenuRef}
+                >
+                    Shirts
+                </li>
+                <li data-type="headphones"
+                    onClick={swithcSectionClass}
+                    ref={addToMenuRef}
+                >
+                    Headphones
+                </li>
+                <li data-type="shoes" className="active"
+                    onClick={swithcSectionClass}
+                    ref={addToMenuRef}
+                >
+                    Shoes
+                </li>
+            </>
+            :
+            <>
+                <li data-type="all"   className="active"
+                        onClick={swithcSectionClass}
+                        ref={addToMenuRef}
+                    >
+                        All
+                    </li>
+                    <li data-type="men"
+                        onClick={swithcSectionClass}
+                        ref={addToMenuRef}
+                    >
+                        Shirts
+                    </li>
+                    <li data-type="headphones"
+                        onClick={swithcSectionClass}
+                        ref={addToMenuRef}
+                    >
+                        Headphones
+                    </li>
+                    <li data-type="shoes"
+                        onClick={swithcSectionClass}
+                        ref={addToMenuRef}
+                    >
+                        Shoes
+                    </li>
+            </>
+    )
+    return (
+        <section className="products">
+            <ul>
+                {list}
+            </ul>
+            <div className='products-container'>
                 {items}
             </div>
         </section>

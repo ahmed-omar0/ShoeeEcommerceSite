@@ -50,8 +50,12 @@ const CheckOut = () => {
     return (
             cart.length > 0 ?
                 <section className="check-out">
-                    {items}
-                    <h4>Total: {total}</h4>
+                    <h1>Check Out</h1>
+                    <div className="items">
+                        {items}
+                        <h4>Total: {total}</h4>
+                        <button onClick={switchCheckOutMethod}>Check Out</button>
+                    </div>
                     <div className='checkout-method' ref={checkOutMethodRef}>
                         <div>
                             <img src={payment1} alt="payment1"/>
@@ -64,9 +68,8 @@ const CheckOut = () => {
                             <input type="text" placeholder="Expiration date"/>
                             <input type="submit" value="Check Out"/>
                         </form>
-                        <span onClick={switchCheckOutMethod}>close</span>
+                        <span  className="close" onClick={switchCheckOutMethod}>close</span>
                     </div>
-                    <button onClick={switchCheckOutMethod}>Check Out</button>
                 </section>
             :
                 <div className="alert">

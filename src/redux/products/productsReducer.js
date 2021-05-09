@@ -1,4 +1,6 @@
-import {FETCH_DATA_REQUEST, FETCH_DATA_SUCCESS, FETCH_DATA_FAILURE, INCREASE_NUM_OF_ITEMS,  DECREASE_NUM_OF_ITEMS, FETCH_PRODUCT,  ADD_ITEM_TO_CART, REMOVE_FROM_CART} from './actionTypes';
+import {FETCH_DATA_REQUEST, FETCH_DATA_SUCCESS, FETCH_DATA_FAILURE, INCREASE_NUM_OF_ITEMS, 
+        DECREASE_NUM_OF_ITEMS, FETCH_PRODUCT,  ADD_ITEM_TO_CART, REMOVE_FROM_CART,
+        CHANGE_SECTION_CLASS} from './actionTypes';
 
 export const initState = {
     loading: true,
@@ -6,7 +8,8 @@ export const initState = {
     error: '',
     numOfItems: 1,
     id: 1,
-    cart: []
+    cart: [],
+    sectionClass: 'all'
 }
 
 export const productsReducer = (state = initState, action) => {
@@ -61,6 +64,11 @@ export const productsReducer = (state = initState, action) => {
             return {
                 ...state,
                 cart: state.cart.filter((item) => item.id !== action.payload.id),
+            }
+        case CHANGE_SECTION_CLASS:
+            return{
+                ...state,
+                sectionClass: action.payload
             }
         default: return state
     }

@@ -31,56 +31,90 @@ div.alert{
     }
 }
 section.check-out{
-    margin: 30px 0 30px 17%;
-    padding: 20px;
-    width: 50%;
-    border: 1px solid;
-    border-radius: 5px;
-    div.item{
+    h1{
         width: 100%;
-        margin-bottom: 5px;
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        &>div{
-            width: 110px;
-            height: 120px;
-            position: relative;
-            img{
-                width: 100%;
-                height: 100%;
-            }
-            .items-number{
-                position: absolute;
-                top: 0px;
-                right: 3px;
-                border-radius: 50%;
-                padding: 7px 10px;
-                background: $main-color;
-                color: white;
-            }
-        }
-        h2{
-            color: $main-color;
-            width: 70%;
-            margin-left: 10px;
-        }
-        h3{
-            width: 23%;
-        }
-        .trash-icon{
-            cursor: pointer;
-            margin-left: 10px;
-        }
-    }
-    h4{
-        color: $main-color;
         text-align: center;
-        font-size: 25px;
+        padding: 20px 0;
+        color: $main-color;
+        font-family: $main-font;
+        font-size: 35px;
+        margin: 0 0 30px 0;
+        text-transform: capitalize;
+        background: rgb(250 ,250 ,250);
+    }
+    div.items{
+        margin: 30px 0 30px 17%;
+        padding: 20px;
+        width: 50%;
+        border: 1px solid;
+        border-radius: 5px;
+        h4{
+            color: $main-color;
+            text-align: center;
+            font-size: 25px;
+        }
+        div.item{
+            width: 100%;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            &>div{
+                width: 110px;
+                height: 120px;
+                position: relative;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+                .items-number{
+                    position: absolute;
+                    top: 0px;
+                    right: 3px;
+                    border-radius: 50%;
+                    padding: 7px 10px;
+                    background: $main-color;
+                    color: white;
+                }
+            }
+            h2{
+                color: $main-color;
+                width: 70%;
+                margin-left: 10px;
+            }
+            h3{
+                width: 23%;
+            }
+            .trash-icon{
+                cursor: pointer;
+                margin-left: 10px;
+            }
+        }
+        button{
+            display: none;
+            visibility: hidden;
+            margin: 10px auto;
+            width: 100%;
+            border: none;
+            outline: none;
+            font-size: 18px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: $second-font;
+            font-size: 20px;
+            background: $main-color;
+            color: white;
+            transition: .2s;
+            &:hover{
+                color: $main-color;
+                background: rgb(250 ,248 ,248);
+            }
+        }
     }
     .checkout-method{
         position: absolute;
-        top: 15%;
+        top: 27%;
         right: 10%;
         width: 500px;
         background: rgb(232 ,218 ,218);
@@ -115,37 +149,19 @@ section.check-out{
                 }
             }
         }
-        span{
+        span.close{
             visibility: hidden;
         }
     }
-    button{
-        display: none;
-        visibility: hidden;
-        margin: 10px auto;
-        width: 100%;
-        border: none;
-        outline: none;
-        font-size: 18px;
-        padding: 5px 10px;
-        border-radius: 5px;
-        cursor: pointer;
-        font-family: $second-font;
-        font-size: 20px;
-        background: $main-color;
-        color: white;
-        transition: .2s;
-        &:hover{
-            color: $main-color;
-            background: rgb(250 ,248 ,248);
-        }
-    }
+    
     @media screen and  (max-width: 1199.99px) {
-        width: 85%;
-        margin: 40px auto;
-        div.item{
-            h3{
-                width: auto;
+        div.items{
+            width: 85%;
+            margin: 40px auto;
+            div.item{
+                h3{
+                    width: auto;
+                }
             }
         }
         .checkout-method{
@@ -157,11 +173,12 @@ section.check-out{
             width: auto;
             height: auto;
             transition: .5s;
-            span{
+            span.close{
                 position: absolute;
-                top: 10%;
+                top: 68px;
                 right: 29px;
-                font-size: 30px;
+                color: $main-color;
+                font-size: 23px;
                 font-weight: 600;
                 font-family: 'Noto Serif';
                 cursor: pointer;
@@ -171,7 +188,7 @@ section.check-out{
         }
         .checkout-method.open{
             visibility: visible;
-            span{
+            span.close{
                 visibility: visible;
             }
         }

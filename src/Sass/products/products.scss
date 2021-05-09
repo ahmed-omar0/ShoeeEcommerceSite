@@ -27,16 +27,18 @@
             }
         }
     }
-    &>div{
+    div.products-container{
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         justify-content: space-evenly;
         &>div{
-            width: 250px;
+            width: 285px;
             margin-top: 20px;
             padding: 20px;
-            display: flex;
+            opacity: 0;
+            transition: .3s;
+            display: none;
             flex-direction: column;
             justify-content: center;
             align-items: center;
@@ -84,7 +86,11 @@
                 }
             }
         }
+        &>div.active{
+            display: flex;
+            opacity: 1;
         }
+    }
     @media screen and (max-width: 991px) {
         ul{
             width: 60%;

@@ -26,9 +26,8 @@ nav{
         outline: none;
         margin: 0 0 21px;
         span{
-            padding: 3px 20px;
+            padding: 4px 19px;
             height: 2px;
-            width: 20px;
             margin: 0;
             border-radius: 10px;
             display: block;
@@ -36,23 +35,21 @@ nav{
         }
         span::before{
             content: '';
-            padding: 3px 20px;
+            padding: 3px 35px;
             height: 2px;
             border-radius: 10px;
             background-color: rgba(114, 0, 0, 0.876);
             display: block;
             margin: 8px -20px;
-            width: 20px;
         }
         span::after{
             content: '';
-            padding: 3px 20px;
+            padding: 3px 35px;
             height: 2px;
             border-radius: 10px;
             background-color: rgba(114, 0, 0, 0.876);
             display: block;
             margin: -4px -20px;
-            width: 20px;
         }
     }
     .menu-collapse{
@@ -107,6 +104,10 @@ nav{
         svg:hover{
             cursor: pointer;
             color:rgb(70, 52, 52);
+        }
+        a{
+            color:rgb(70, 52, 52);
+            font-weight: 600;
         }
         div.cart-icon{
             position: relative;
@@ -325,11 +326,16 @@ nav{
         }
     }
     @media only screen and (max-width: 576px){
-        justify-content: space-around;
+        padding: 10px 2px;
         .logo{
             padding: 0;
             margin: 0;
             font-size: 30px;
+        }
+        .menu-icons{
+            span::before, span::after{
+                padding: 3px 25px;
+            }
         }
         form[name="search-form"]::before{
             right: 60px;
@@ -337,16 +343,6 @@ nav{
         form[name="search-form"]{
             top: 58px;
             transform: translateX(5%);
-        }
-        .menu-icons{
-            span{
-                width: 10px;
-                height: 1px;
-                &::after, &::before{
-                    height: 1px;
-                    width: 10px;
-                }
-            }
         }
         div.icons{
             font-size: 22px;

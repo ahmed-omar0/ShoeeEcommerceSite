@@ -1,22 +1,29 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+//Swiper
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y , Autoplay } from 'swiper';
+// Import Swiper styles
+import 'swiper/swiper-bundle.min.css';
+//Images
 import slide1 from '../../assets/images/slide1.jpg';
 import slide2 from '../../assets/images/slide2.jpg';
 import slide3 from '../../assets/images/slide3.jpg';
+// Redux
+import { useDispatch } from 'react-redux';
+import {changeSectionClass} from '../../redux/products/actions';
 
-// Import Swiper styles
-import 'swiper/swiper-bundle.min.css';
+
 
 // install Swiper modules
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Autoplay]);
 
 const Slide = () => {
-    const imgs = [slide1, slide2, slide3]
+    const imgs = [slide1, slide2, slide3];
+    const dispatch = useDispatch();
     //Slides
-    const slides = []
-    const headers = ['men section', 'HeadPhones section', 'shoes section']
+    const slides = [];
+    const headers = ['men', 'headphones', 'shoes'];
     for (let i = 0; i< imgs.length ;i++){
         slides.push(
             <SwiperSlide 
@@ -34,8 +41,8 @@ const Slide = () => {
                         {({isActive}) => (
                             isActive ? 
                             <div className="content">
-                                <h2>{headers[i]}</h2>
-                                <button>
+                                <h2>{`${headers[i]} section`}</h2>
+                                <button onClick={() => dispatch(changeSectionClass(headers[i]))}>
                                     <Link to="/products"> Shop Now </Link>
                                 </button>
                             </div>

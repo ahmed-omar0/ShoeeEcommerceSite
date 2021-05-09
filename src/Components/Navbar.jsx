@@ -152,7 +152,9 @@ const Navbar = () => {
                         <span>{cartCount}</span>
                         <FaShoppingCart/>
                     </div>
-                    <BiHelpCircle/>
+                    <Link to="/contactus">
+                        <BiHelpCircle/>
+                    </Link>
             </div>
             <button className="menu-icons" aria-label="close" onClick={menuTragger} ref={btnRef}>
                 <span aria-hidden="true"></span>

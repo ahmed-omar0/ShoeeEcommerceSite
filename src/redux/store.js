@@ -10,7 +10,7 @@ import axios from 'axios';
 const persistConfig = {
     key: 'root',
     storage,
-    blacklist: ['numOfItems', 'cartItems']
+    blacklist: ['numOfItems', 'cartItems', 'sectionClass']
 }
 const persistedReducer = persistReducer(persistConfig, productsReducer);
 

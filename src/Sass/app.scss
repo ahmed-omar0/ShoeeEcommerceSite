@@ -4,10 +4,13 @@
     font-family: 'oswald';
     src: '../fonts/oswald.ttf';
 }
+
 /****************************Global Variables****************************/
 $main-color: rgba(109, 28, 28, 0.794);
 $main-font: oswald;
 $second-font: 'Noto Serif', serif;
+
+/****************************Import Files****************************/
 @import "./spinner.scss";
 @import "./navbar.scss";
 @import "./Home/slide.scss";
@@ -17,9 +20,12 @@ $second-font: 'Noto Serif', serif;
 @import "./singleProduct/single-product.scss";
 @import "./singleProduct/related-products.scss";
 @import "./check-out.scss";
+@import "./contact-us/contact-us.scss";
 @import "./footer.scss";
 
-
+*{
+    box-sizing: border-box;
+}
 html{
     overflow-x: hidden;
 }

@@ -17,7 +17,7 @@ const TopSelling = () => {
     for (let i = 0; i < products.length; i++) {
         products[i].best === true ? 
             items.push(
-                <SwiperSlide tag='li'>
+                <SwiperSlide tag='li' key={products[i].id}>
                     <Link to="/singleproduct" key={"item_" + (products[i].id)} onClick={() => dispatch(fetchProduct(products[i].id))}>
                         <div className="item">
                             <div className="image-container">

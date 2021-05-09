@@ -1,20 +1,36 @@
-import {FaFacebook} from 'react-icons/fa';
+import {FaFacebook, FaYoutube} from 'react-icons/fa';
 import {AiFillInstagram} from 'react-icons/ai';
-import {FaYoutube} from 'react-icons/fa';
+import {Link} from 'react-router-dom';
+//Redux
+import { useDispatch } from 'react-redux';
+import {changeSectionClass} from '../redux/products/actions';
+
 const Footer = () => {
+    const dispatch = useDispatch();
     return (
         <footer>
             <ul>
                 <li>CATEGORIES</li>
-                <li><a href="e">Men</a></li>
-                <li><a href="e">Watches</a></li>
-                <li><a href="e">Shoes</a></li>
+                <li><Link to="/products" onClick={() => {
+                    dispatch(changeSectionClass('men'))
+                    window.scrollTo(0,0)
+                    }
+                }>Men</Link></li>
+                <li><Link to="/products" onClick={() => {
+                    dispatch(changeSectionClass('headphones'))
+                    window.scrollTo(0,0)
+                    }
+                }>HeadPhones</Link></li>
+                <li><Link to="/products" onClick={() => {
+                    dispatch(changeSectionClass('shoes'))
+                    window.scrollTo(0,0)
+                }}>Shoes</Link></li>
             </ul>
             <ul>
                 <li>help</li>
-                <li><a href="e">Track Order</a></li>
-                <li><a href="e">Returns</a></li>
-                <li><a href="e">Shiping</a></li>
+                <li><Link to="/contactus" onClick={() => window.scrollTo(0,0)}>Track Order</Link></li>
+                <li><Link to="/contactus" onClick={() => window.scrollTo(0,0)}>Returns</Link></li>
+                <li><Link to="/contactus" onClick={() => window.scrollTo(0,0)}>Shiping</Link></li>
             </ul>
             <div className="get-in-touch">
                 <h2>GET IN TOUCH</h2>
@@ -42,7 +58,7 @@ const Footer = () => {
                 </form>
             </div>
             <div className="footer">
-                <p>Copyright ©2021 All rights reserved | This template is made with  by Colorlib</p>
+                <p>Copyright ©2021 All rights reserved | This template is made by Ahmed Omar</p>
             </div>
         </footer>
     );
