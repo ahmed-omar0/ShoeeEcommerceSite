@@ -8,6 +8,7 @@ const Products = () => {
     const products = useSelector(state => state.products);
     const sectionClass = useSelector(state => state.sectionClass);
     const dispatch = useDispatch();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const items = [];
     const list = [];
     let itemsRef = useRef([]);
