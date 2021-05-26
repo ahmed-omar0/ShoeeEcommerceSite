@@ -9,11 +9,11 @@ const Home = () => {
             <Slide/>
             <TopSelling/>
             {/*Add Men Section*/}
-            <SingleSection type="shirt" sectionName="Men Section" loadMore="/products"/>
+            <SingleSection type="shirt" sectionName="Men" loadMore="/products"/>
             {/*Add HeadPhones Section*/}
-            <SingleSection type="headphones" sectionName="HeadPhones Section" loadMore="/products"/>
+            <SingleSection type="headphones" sectionName="HeadPhones" loadMore="/products"/>
             {/*Add Watches Section*/}
-            <SingleSection type="shoes" sectionName="Shoes Section" loadMore="/products"/>
+            <SingleSection type="shoes" sectionName="Shoes" loadMore="/products"/>
         </React.Fragment>
     );
 }

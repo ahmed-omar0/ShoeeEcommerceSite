@@ -42,7 +42,7 @@ const Slide = () => {
                             isActive ? 
                             <div className="content">
                                 <h2>{`${headers[i]} section`}</h2>
-                                <button onClick={() => dispatch(changeSectionClass(headers[i]))}>
+                                <button onClick={() => dispatch(changeSectionClass(headers[i] === 'men' ? 'shirt' : headers[i]))}>
                                     <Link to="/products"> Shop Now </Link>
                                 </button>
                             </div>

@@ -27,9 +27,11 @@ const Products = () => {
     }
     useEffect(() => {
         for(let i=0; i < items.length; i++){
-            console.log(items)
             let className = itemsRef.current[i].className;
-            className.includes(sectionClass) ? itemsRef.current[i].classList.add('active') : itemsRef.current[i].classList.remove('active')
+            className.includes(sectionClass) ? 
+            itemsRef.current[i].classList.add('active') 
+            : 
+            itemsRef.current[i].classList.remove('active')
         }
     }, [items, sectionClass])
     
@@ -39,7 +41,7 @@ const Products = () => {
             console.log(true);
         }else{
             items.push(
-                <div key={products[i].id} className={products[i].title === 'shirt' ? 'all men' : `all ${products[i].title}`} 
+                <div key={products[i].id} className={`all ${products[i].title}`} 
                     ref={addToItemsRef} id={products[i].id}>
                     <div className="product-image">
                         <Link to='/singleProduct'>
@@ -112,7 +114,7 @@ const Products = () => {
         return e.target.classList.add('active');
     }
     list.push(
-        sectionClass === 'men' ?
+        sectionClass === 'shirt' ?
             <>
                 <li data-type="all"
                         onClick={swithcSectionClass}
@@ -120,7 +122,7 @@ const Products = () => {
                     >
                         All
                     </li>
-                    <li data-type="men"  className="active"
+                    <li data-type="shirt"  className="active"
                         onClick={swithcSectionClass}
                         ref={addToMenuRef}
                     >
@@ -148,7 +150,7 @@ const Products = () => {
                     >
                         All
                     </li>
-                    <li data-type="men"
+                    <li data-type="shirt"
                         onClick={swithcSectionClass}
                         ref={addToMenuRef}
                     >
@@ -176,7 +178,7 @@ const Products = () => {
                 >
                     All
                 </li>
-                <li data-type="men"
+                <li data-type="shirt"
                     onClick={swithcSectionClass}
                     ref={addToMenuRef}
                 >

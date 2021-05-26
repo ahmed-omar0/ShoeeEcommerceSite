@@ -58,7 +58,7 @@ const Navbar = () => {
                                     switchCart() :
                                 searchBoxRef.current.className.includes('open') ?
                                     switchSearchBox():
-                                console.log(false)
+                                null
                             )}>
                                 Home
                         </Link>
@@ -71,7 +71,7 @@ const Navbar = () => {
                                 switchCart() :
                             searchBoxRef.current.className.includes('open') ?
                                 switchSearchBox() :
-                            console.log(false)
+                            null
                             )}>
                                 Products
                         </Link>
@@ -84,7 +84,7 @@ const Navbar = () => {
                                 switchCart() :
                             searchBoxRef.current.className.includes('open') ?
                                 switchSearchBox() :
-                            console.log(false)
+                            null
                             )}>
                                 Check Out
                         </Link>
@@ -97,7 +97,7 @@ const Navbar = () => {
                                 switchCart() :
                             searchBoxRef.current.className.includes('open') ?
                                 switchSearchBox() :
-                            console.log(false)
+                            null
                             )}>
                                 Contact-us
                         </Link>
@@ -105,7 +105,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <form name="search-form" ref={searchBoxRef}> 
-                <label className="sr-only" for="product">Search</label>
+                <label className="sr-only" htmlFor="product">Search</label>
                 <input list="products" name="product" id="product"  ref={inputRef}/>
                 <datalist id="products" title="Search">
                     {products.map(product => 
@@ -128,7 +128,7 @@ const Navbar = () => {
                                     <h3>Total Price: {el.qty * el.price} $</h3>
                                 </div>
                             )
-                        }) : console.log(false)
+                        }) : null
                 }
                 {
                     cart.length === 0 ?

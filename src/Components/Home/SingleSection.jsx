@@ -1,8 +1,8 @@
-import { connect,useDispatch } from 'react-redux';
+import { connect, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { BsStarFill, BsStarHalf, BsStar } from 'react-icons/bs';
 import { fetchProduct } from '../../redux/products/actions';
-
+import {changeSectionClass} from '../../redux/products/actions';
 
 
 const SingleSection = (props) => {
@@ -10,7 +10,7 @@ const SingleSection = (props) => {
     const dispatch = useDispatch()
     if(props.products.length !== 0){
         for (let i = 0; i < props.products.length; i++) {
-            if (props.products[i].title === props.type && sections.length < 4){
+            if (props.products[i].title === props.type && sections.length < 4 && props.products[i].name !== 'Eastern Shoes'){
                 sections.push(
                     <div className="item" key={"item_" + props.products[i].id}>
                         <div className='image-container'>
@@ -61,9 +61,9 @@ const SingleSection = (props) => {
     }
     return (
         <section className="single-section">
-            <h2>{props.sectionName}</h2>
+            <h2>{props.sectionName} Section</h2>
                 {sections}
-            <Link to={props.loadMore} className="load_more">more ---&raquo;</Link>
+            <Link to={props.loadMore} onClick={() => dispatch(changeSectionClass(props.type))} className="load_more">more ---&raquo;</Link>
         </section>
     );
 }
