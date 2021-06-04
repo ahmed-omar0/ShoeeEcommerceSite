@@ -91,8 +91,8 @@ section.check-out{
             }
         }
         button{
-            display: none;
             visibility: hidden;
+            opacity: 0;
             margin: 10px auto;
             width: 100%;
             border: none;
@@ -105,7 +105,7 @@ section.check-out{
             font-size: 20px;
             background: $main-color;
             color: white;
-            transition: .2s;
+            transition: .4s;
             &:hover{
                 color: $main-color;
                 background: rgb(250 ,248 ,248);
@@ -151,21 +151,27 @@ section.check-out{
         }
         span.close{
             visibility: hidden;
+            opacity: 0;
         }
     }
-    
     @media screen and  (max-width: 1199.99px) {
         div.items{
-            width: 85%;
+            width: 90%;
             margin: 40px auto;
             div.item{
+                justify-content: center;
                 h3{
                     width: auto;
                 }
             }
+            button{
+                visibility: visible;
+                opacity: 1;
+            }
         }
         .checkout-method{
             visibility: hidden;
+            opacity: 0;
             top: 0;
             bottom: 0;
             left: 0;
@@ -185,16 +191,15 @@ section.check-out{
                 outline: none;
                 transition: .5s;
             }
-        }
-        .checkout-method.open{
-            visibility: visible;
-            span.close{
+            &.open{
+                position: fixed;
                 visibility: visible;
+                opacity: 1;
+                span.close{
+                    visibility: visible;
+                    opacity: 1;
+                }
             }
-        }
-        button{
-            display: block;
-            visibility: visible;
         }
     }
 }

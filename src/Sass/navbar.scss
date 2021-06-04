@@ -24,32 +24,15 @@ nav{
         background-color: transparent;
         border: none;
         outline: none;
-        margin: 0 0 21px;
-        span{
-            padding: 4px 19px;
-            height: 2px;
-            margin: 0;
-            border-radius: 10px;
+        margin: 0 0 1px;
+        span {
             display: block;
-            background-color: rgba(114, 0, 0, 0.876);
-        }
-        span::before{
-            content: '';
-            padding: 3px 35px;
-            height: 2px;
-            border-radius: 10px;
-            background-color: rgba(114, 0, 0, 0.876);
-            display: block;
-            margin: 8px -20px;
-        }
-        span::after{
-            content: '';
-            padding: 3px 35px;
-            height: 2px;
-            border-radius: 10px;
-            background-color: rgba(114, 0, 0, 0.876);
-            display: block;
-            margin: -4px -20px;
+            width: 50px;
+            height: 6px;
+            border-radius: 5px;
+            background-color: $main-color;
+            margin: 5px 0;
+            transition: 0.4s;
         }
     }
     .menu-collapse{
@@ -265,17 +248,16 @@ nav{
             display: block;
             cursor: pointer;
             &.open{
-                span, span::after, span::before{
-                    transition: background .3s linear;
-                    background-color: transparent;
+                span:nth-child(1){
+                    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+                    transform: rotate(-45deg) translate(-9px, 6px);
                 }
-                span::after{
-                    content: "X";
-                    font-size: 55px;
-                    font-weight: 900;
-                    margin: -51px -33px;
-                    color: rgba(114, 0, 0, 0.822);
-                    cursor: pointer;
+                span:nth-child(2){
+                    opacity: 0;
+                }
+                span:nth-child(3){
+                    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+                    transform: rotate(45deg) translate(-8px, -8px);
                 }
             }
         }
@@ -304,9 +286,9 @@ nav{
         }
         .menu-collapse.open{
             width: 100%;
-            height: auto;
+            height: 100vh;
             display: block;
-            position: absolute;
+            position: fixed;
             top: 55px;
             left: 0;
             background: rgb(255 ,255 ,255);

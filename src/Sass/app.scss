@@ -21,6 +21,8 @@ $second-font: 'Noto Serif', serif;
 @import "./singleProduct/related-products.scss";
 @import "./check-out.scss";
 @import "./contact-us/contact-us.scss";
+@import "./log-in/login.scss";
+@import "./signup/signup.scss";
 @import "./footer.scss";
 
 *{
@@ -31,5 +33,5 @@ html{
 }
 body{
     margin:0;
-    overflow-x: hidden;
+    overflow: hidden;
 }

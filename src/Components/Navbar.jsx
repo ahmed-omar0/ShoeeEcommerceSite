@@ -4,7 +4,8 @@ import {Link} from 'react-router-dom';
 import {FaUserCircle ,FaShoppingCart} from 'react-icons/fa';
 import {BiHelpCircle} from 'react-icons/bi';
 import {ImSearch} from 'react-icons/im';
-import {BsTrashFill, BsExclamationCircleFill} from 'react-icons/bs'
+import {BsTrashFill, BsExclamationCircleFill} from 'react-icons/bs';
+// Redux
 import { useSelector , useDispatch} from 'react-redux';
 import { removeFromCart } from '../redux/products/actions';
 
@@ -46,7 +47,7 @@ const Navbar = () => {
     return ( 
         <nav>
             <div className="logo">
-                <Link to="/">Shoeee</Link>
+                <Link to="/">Shoee</Link>
             </div>
             <div ref={menuRef} className="menu-collapse">
                 <ul className="menu">
@@ -147,7 +148,9 @@ const Navbar = () => {
             </div>
             <div className="icons">
                     <ImSearch onClick={switchSearchBox}/>
-                    <FaUserCircle/>
+                    <Link to="/login">
+                        <FaUserCircle/>
+                    </Link>
                     <div className="cart-icon"  onClick={switchCart}> 
                         <span>{cartCount}</span>
                         <FaShoppingCart/>
@@ -157,6 +160,8 @@ const Navbar = () => {
                     </Link>
             </div>
             <button className="menu-icons" aria-label="close" onClick={menuTragger} ref={btnRef}>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
             </button>
         </nav>

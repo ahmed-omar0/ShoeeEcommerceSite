@@ -60,6 +60,10 @@ footer{
         }
     }
     div.newsletter{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         h2{
             font-family: $main-font;
             font-size: 22px;

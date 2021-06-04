@@ -76,10 +76,12 @@ const RelatedProducts = () => {
     return (
         <section className="related-products">
             <h2>Related Products</h2>
+            <div className="items">
                 {items}
-                <Link to="Products">
-                    More Products <span>--&raquo;</span>
-                </Link>
+            </div>
+            <Link to="Products">
+                More Products <span>--&raquo;</span>
+            </Link>
         </section>
     );
 }

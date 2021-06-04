@@ -68,14 +68,15 @@ section.contact-us{
             font-size: 18px;
         }
     }
-    @media screen and (max-width: 767.99px) {
+    @media screen and (max-width: 576.99px) {
         h1{
             font-size: 30px;
         }
         form{
-            transform: translate(0,355px);
-            width: 90%;
+            transform: translate(0,520px);
+            width: 95%;
             margin: 20px auto;
+            padding: 15px 0;
         }
         .help-paragraph{
             transform: translate(0,-600px);

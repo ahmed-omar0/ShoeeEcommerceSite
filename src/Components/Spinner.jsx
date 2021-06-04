@@ -5,5 +5,5 @@ const Spinner = () => {
         </section>
     );
 }
- 
+
 export default Spinner;
